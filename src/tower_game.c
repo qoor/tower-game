@@ -2,8 +2,9 @@
 
 #include <stdio.h>
 
-#define TRUE 	(1)
-#define FALSE 	(0)
+#include "utils.h"
+
+#define SCORE_GIVE_AMOUNT   (10)
 
 int tower_game_init(struct tower_game *target)
 {
@@ -38,10 +39,21 @@ int tower_game_loop(struct tower_game *target)
 		return TOWER_GAME_ERROR;
 
 	ret = make_tower(target->tower);
+	show_tower(target->tower);
 	if (ret == MAKE_TOWER_CONTINUE)
 		return TOWER_GAME_CONTINUE;
 
 	return TOWER_GAME_FINISH;
+}
+
+int tower_game_give_score(struct tower_game *target)
+{
+	if (target == NULL) {
+		return -1;
+	}
+
+	target->score += SCORE_GIVE_AMOUNT;
+	return 0;
 }
 
 int tower_game_end(struct tower_game *target)

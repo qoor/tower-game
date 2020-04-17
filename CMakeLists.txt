@@ -19,5 +19,5 @@ target_include_directories (tower-game PUBLIC
 )
 
 set_property (TARGET tower-game PROPERTY C_STANDARD 90)
-target_compile_options (tower-game PUBLIC -Wall -pedantic)
+target_compile_options (tower-game PUBLIC -g -Wall -pedantic)
 

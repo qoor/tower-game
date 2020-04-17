@@ -7,6 +7,9 @@
 #define TOWER_GAME_CONTINUE (-1)
 #define TOWER_GAME_ERROR    (-2)
 
+
+#define MAX_RANDOM_VALUE    (9)
+
 struct tower_game {
   struct tower *tower;
   int score;
@@ -14,6 +17,7 @@ struct tower_game {
 
 int tower_game_init(struct tower_game *target);
 int tower_game_loop(struct tower_game *target);
+int tower_game_give_score(struct tower_game *target);
 int tower_game_end(struct tower_game *target);
 
 #endif

@@ -3,4 +3,5 @@ bin/
 CMakeFiles/
 CMakeCache.txt
 Makefile
+.clangd/
 

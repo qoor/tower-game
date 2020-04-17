@@ -2,7 +2,7 @@
 
 #include "tower_game.h"
 
-void error_message();
+void error_message(void);
 
 int main (int argc, char **argv)
 {
@@ -24,7 +24,7 @@ int main (int argc, char **argv)
 	return 0;
 }
 
-void error_message()
+void error_message(void)
 {
 	printf("Program error!\n");
 }

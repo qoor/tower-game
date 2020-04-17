@@ -45,6 +45,8 @@ struct tower *tower_new(int num_rows, int num_columns)
 		}
 	}
 
+	srand(time(NULL));
+
 	return new_tower;
 }
 
@@ -83,7 +85,6 @@ int tower_new_value(struct tower *target, int row, int column)
 {
 	int new_value = 0;
 
-	srand(time(NULL));
 	new_value = (rand() % MAX_RANDOM_VALUE) + 1;
 
 	target->rows[row]->columns[column]->value = new_value;

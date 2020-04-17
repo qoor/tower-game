@@ -11,8 +11,8 @@
 #define MAX_RANDOM_VALUE    (9)
 
 struct tower_game {
-  struct tower *tower;
-  int score;
+	struct tower *tower;
+	int score;
 };
 
 int tower_game_init(struct tower_game *target);

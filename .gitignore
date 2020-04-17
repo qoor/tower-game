@@ -4,4 +4,6 @@ CMakeFiles/
 CMakeCache.txt
 Makefile
 .clangd/
+.vs/
+cmake_install.cmake
 

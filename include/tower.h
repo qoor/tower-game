@@ -8,22 +8,22 @@
 #define MAKE_TOWER_ERROR      (-2)
 
 struct column {
-  struct row *owner;
-  int value;
+	struct row *owner;
+	int value;
 };
 
 struct row {
-  struct tower *owner;
-  struct column **columns;
+	struct tower *owner;
+	struct column **columns;
 };
 
 struct tower {
-  struct tower_game *owner;
+	struct tower_game *owner;
 
-  int num_rows;
-  int num_columns;
+	int num_rows;
+	int num_columns;
 
-  struct row **rows;
+	struct row **rows;
 };
 
 struct tower *tower_new(int num_rows, int num_columns);

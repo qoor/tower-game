@@ -6,8 +6,10 @@ set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set (PROJECT_SOURCES
 	src/main.c
 	src/tower.c
+	src/tower_game.c
 
 	include/tower.h
+	include/tower_game.h
 )
 
 add_executable (tower-game ${PROJECT_SOURCES})

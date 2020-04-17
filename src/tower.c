@@ -62,6 +62,32 @@ int tower_delete(struct tower *target)
 	return 0;
 }
 
+int make_tower(struct tower *target)
+{
+	if (target == NULL)
+		return MAKE_TOWER_ERROR;
+
+	return MAKE_TOWER_FINISH;
+}
+
+int show_tower(struct tower *target)
+{
+	int i, j;
+
+	if (target == NULL)
+		return -1;
+
+	for (i = target->num_rows - 1; i >= 0; --i) {
+		for (j = 0; j < target->num_columns; ++j)
+			printf("%d\t", target->rows[i]->columns[j]->value);
+
+		printf("\n");
+	}
+
+	printf("Score: %d", target->owner->score);
+	return 0;
+}
+
 struct row *row_new(int num_columns)
 {
 	int i;

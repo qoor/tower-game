@@ -1,31 +1,31 @@
 #include <stdio.h>
 
-#include "tower.h"
+#include "tower_game.h"
 
-#define TRUE 	(1)
-#define FALSE 	(0)
+void error_message();
 
 int main (int argc, char **argv)
 {
-	struct tower *tower = NULL;
-	int num_rows = 0, num_columns = 0;
+	struct tower_game game = { 0, };
+	int ret = 0;
 
-	while (TRUE) {
-		printf("row, column values: ");
-
-		scanf("%d%d", &num_rows, &num_columns);
-		if (num_rows <= 0 || num_columns <= 0)
-			printf("Invalid values! Try again.\n");
-		else
-			break;
-	}
-
-	tower = tower_new(num_rows, num_columns);
-	if (tower == NULL) {
-		printf("Program error!\n");
+	ret = tower_game_init(&game);
+	if (ret != 0) {
+		error_message();
 		return 0;
 	}
 
+	do {
+		ret = tower_game_loop(&game);
+	} while (ret == TOWER_GAME_CONTINUE);
+
+	tower_game_end(&game);
+
 	return 0;
+}
+
+void error_message()
+{
+	printf("Program error!\n");
 }
 
